@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{{ url_for('add',username=current_user.username) }}"><button type="button">Add</button></a>
+<a href="{{ url_for('logout') }}"><button type="button">Logout</button></a>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+          <th>Content</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+    {% for data in all_data %}
+        <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.content }}</td>
+            <td><a href="{{ url_for('delete',username=current_user.username,id=data.id) }}"><button type="button">Delete</button></a></td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

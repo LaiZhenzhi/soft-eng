@@ -1,0 +1,12 @@
+.outer_div{
+    width:75%;
+    margin: auto;
+}
+
+.inner_div{
+    float:right;
+}
+
+.select_box{
+    width:15%;
+}

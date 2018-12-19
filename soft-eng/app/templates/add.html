@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="outer_div">
+    <h1>Login</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.content.label }}<br>
+            {{ form.content(size=32) }}
+            {% for error in form.content.errors %}
+                <span style="color: red;">[{{error }}]</span></span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }} <a href="{{ url_for('data',username=current_user.username) }}"><button type="button">Cancel</button></p>
+    </form>
+</div>
+{% endblock %}

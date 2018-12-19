@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap_min.css" >
+    <script type="text/javascript" src="/static/bootstrap_min.js"></script>
+    <script type="text/javascript" src="/static/jquery_min.js"></script>
+    <link rel="stylesheet" href="/static/print.css" >
+    <style>
+      ul#menu li {
+          display:inline;
+      }
+    </style>
+  </head>
+</head>
+
+<body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ur>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ur>
+            {% endif %}
+        {% endwith %}
+
+
+    {% block content %} {% endblock %}
+</body>
+</html>
